@@ -1,0 +1,18 @@
+
+<div class="container">
+  <h1>
+    <%= @cocktail.name %>
+  </h1>
+  <small>
+    <h4>Ingredients</h4>
+    <span class="label label-default"><% @cocktail.ingredients.each do  |i| %></span>
+      <p>- <%= i.name %></p>
+    <% end %>
+    <h4>Doses</h4>
+    <span class="label label-default"><% @cocktail.doses.each do  |i| %></span>
+      <p>- <%= i.description %></p>
+    <% end %>
+  </small>
+  <%= link_to "Index", cocktails_path, class: "btn btn-danger" %>
+  <%= link_to "New dose", new_cocktail_dose_path(@cocktail), class: "btn btn-danger" %>
+</div>
